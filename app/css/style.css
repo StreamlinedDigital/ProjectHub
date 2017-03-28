@@ -1,0 +1,6 @@
+.panel-body {
+  display: flex;
+}
+.inner-panel {
+  flex: 1
+}
