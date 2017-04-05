@@ -15,6 +15,7 @@ const zenhubapi = {
             })
           })
         })
+        
         return issues
       })
       return request
