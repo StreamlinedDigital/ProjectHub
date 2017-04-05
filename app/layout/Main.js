@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../Header';
+import Header from '../layout/Header';
 import GithubAPI from 'github-api';
 import utils from '../utils';
-import Issue from './Issue'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
-import Issues from '../components/Issues';
-import Dashboard from '../components/Dashboard';
-import Login from '../components/Login';
-import RepoList from '../components/RepoList';
+import Issue from '../components/Issue'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import Issues from './Issues';
+import Dashboard from './Dashboard';
+import Login from './Login';
+import RepoList from './RepoList';
 
 
 class Main extends React.Component {

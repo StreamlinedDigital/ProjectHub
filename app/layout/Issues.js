@@ -1,8 +1,8 @@
 import React from 'react';
 import Githubapi from '../utils/githubapi';
-import Issue from './Issue'
-import IssuesStage from './IssuesStage'
-
+import Issue from '../components/Issue'
+import IssuesStage from '../components/IssuesStage'
+import config from '../utils/config'
 class Issues extends React.Component {
     constructor(props){
       super(props)
@@ -16,8 +16,8 @@ class Issues extends React.Component {
       const hash = window.location.hash.split('repos/')
       // const repo = hash.replace(/-/g, "");
 
-      Githubapi.issues("StreamlinedStudio", 'FamilyChallenge').then(data => {
-        
+      Githubapi.issues(config.organization, 'FamilyChallenge').then(data => {
+
         this.setState({
           issues: data
         })

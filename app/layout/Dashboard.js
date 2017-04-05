@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../Header';
+import Header from '../layout/Header';
 import Githubapi from '../utils/githubapi';
-import Zenhubapi from '../utils/zenhubapi';
-import MilestoneTimeline from './MilestoneTimeline'
+import MilestoneTimeline from '../components/MilestoneTimeline'
 import Auth from '../utils/authentication'
 import utils from '../utils';
-import Issue from './Issue';
+import Issue from '../components/Issue';
 import { Redirect } from 'react-router'
+import config from '../utils/config'
 
 class Dashboard extends React.Component {
 
@@ -27,19 +27,19 @@ class Dashboard extends React.Component {
       const hash = window.location.hash.split('repos/')[1] || "";
       const repo = hash.replace(/-/g);
 
-      Githubapi.issues("StreamlinedStudio", repo, Auth()).then(data => {
+      Githubapi.issues(config.organization, repo, Auth()).then(data => {
         this.setState({
           issues: data
         })
       })
 
-      Githubapi.readme("StreamlinedStudio", repo, Auth()).then(data => {
+      Githubapi.readme(config.organization, repo, Auth()).then(data => {
         this.setState({
           readme: data
         })
       })
 
-      Githubapi.milestones('StreamlinedStudio', repo, Auth()).then(data => {
+      Githubapi.milestones(config.organization, repo, Auth()).then(data => {
         this.setState({
           milestones: data
         })
